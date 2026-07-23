@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "ResQAI 2.0",
+    "slug": "resqai-2-0",
+    "scheme": "resqai",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.resqai.mobile"
+    },
+    "android": {
+      "package": "com.resqai.mobile",
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "CAMERA"]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "ResQAI needs your location to assess risk and recommend the nearest shelter."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "ResQAI needs photo access so responders can assess damage from your rescue request."
+        }
+      ]
+    ]
+  }
+}
