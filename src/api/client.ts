@@ -107,7 +107,14 @@ export const api = {
     const res = await fetch(`${getApiBaseUrl()}/upload-photo`, {
       method: "POST",
       body: formData,
-      headers: { "Content-Type": "multipart/form-data" },
+      // Deliberately NOT setting Content-Type here. When sending FormData,
+      // fetch must set this header itself, because it needs to include a
+      // boundary=... parameter that only fetch knows (a random string used
+      // to separate multipart fields). Setting Content-Type manually
+      // overwrites that and removes the boundary, so the server can no
+      // longer parse the upload -- this was silently breaking every photo
+      // submission (falling back to the generic "minor_debris" label)
+      // until this fix.
     });
     if (!res.ok) {
       throw new ApiError(`Photo upload failed: ${res.status} ${res.statusText}`, res.status);

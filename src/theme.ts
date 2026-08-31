@@ -1,15 +1,17 @@
 export const colors = {
-  bg: "#0F1115",
-  surface: "#181B21",
-  surfaceAlt: "#20242C",
-  border: "#2A2E37",
-  text: "#F4F5F7",
-  textMuted: "#9BA1AC",
-  accent: "#E24B4A", // emergency red
-  accentDark: "#A32D2D",
+  bg: "#14141C",
+  surface: "#1E1E2A",
+  surfaceAlt: "#232330",
+  border: "#2A2A38",
+  text: "#FFFFFF",
+  textMuted: "#9CA3AF",
+  accent: "#8B5CF6", // brand purple -- primary actions & highlights
+  accentDark: "#6D28D9",
+  accentGlow: "rgba(139, 92, 246, 0.35)",
+  accentSoft: "rgba(139, 92, 246, 0.15)",
   success: "#5DCAA5",
   warning: "#EF9F27",
-  critical: "#E24B4A",
+  critical: "#E24B4A", // kept red for actual emergencies/errors, not for normal UI
 };
 
 export const spacing = {

@@ -17,42 +17,45 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "SOS",
-          tabBarLabel: "SOS",
-          tabBarIcon: ({ color, size }) => <Ionicons name="alert-circle" color={color} size={size} />,
+          title: "Home",
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color, size }) => <Ionicons name="home" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
         name="shelters"
         options={{
-          title: "Shelters & route",
-          tabBarLabel: "Shelters",
-          tabBarIcon: ({ color, size }) => <Ionicons name="home" color={color} size={size} />,
+          title: "Safety & Shelters",
+          tabBarLabel: "Safety",
+          tabBarIcon: ({ color, size }) => <Ionicons name="shield-checkmark" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
         name="queue"
         options={{
-          title: "Responder queue",
-          tabBarLabel: "Queue",
-          tabBarIcon: ({ color, size }) => <Ionicons name="list" color={color} size={size} />,
+          title: "Alerts",
+          tabBarLabel: "Alerts",
+          tabBarIcon: ({ color, size }) => <Ionicons name="notifications" color={color} size={size} />,
         }}
       />
       <Tabs.Screen
-        name="assistant"
+        name="profile"
         options={{
-          title: "Emergency assistant",
-          tabBarLabel: "Assistant",
-          tabBarIcon: ({ color, size }) => <Ionicons name="chatbubble-ellipses" color={color} size={size} />,
+          title: "Profile",
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color, size }) => <Ionicons name="person" color={color} size={size} />,
         }}
+      />
+
+      {/* Kept fully functional and routable (e.g. from the Profile screen),
+          just hidden from the bottom tab bar so it matches the 4-tab design. */}
+      <Tabs.Screen
+        name="assistant"
+        options={{ title: "Emergency assistant", href: null }}
       />
       <Tabs.Screen
         name="guide"
-        options={{
-          title: "Offline guide",
-          tabBarLabel: "Guide",
-          tabBarIcon: ({ color, size }) => <Ionicons name="book" color={color} size={size} />,
-        }}
+        options={{ title: "Offline guide", href: null }}
       />
     </Tabs>
   );

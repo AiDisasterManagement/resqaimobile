@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet, ActivityIndicator, ViewStyle } from "react-native";
+import { View, Text, Pressable, StyleSheet, ActivityIndicator, ViewStyle, Platform } from "react-native";
 import { colors, spacing, radius } from "../theme";
 
 export function Card({ children, style }: { children: React.ReactNode; style?: ViewStyle }) {
@@ -52,6 +52,16 @@ const styles = StyleSheet.create({
     borderRadius: radius.sm,
     paddingVertical: spacing.md,
     alignItems: "center",
+    ...Platform.select({
+      web: { boxShadow: `0 0 24px ${colors.accentGlow}` },
+      default: {
+        shadowColor: colors.accent,
+        shadowOpacity: 0.5,
+        shadowRadius: 12,
+        shadowOffset: { width: 0, height: 4 },
+        elevation: 6,
+      },
+    }),
   },
   buttonDisabled: { opacity: 0.5 },
   buttonText: { color: "#fff", fontWeight: "600", fontSize: 15 },

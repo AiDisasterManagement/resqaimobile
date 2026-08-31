@@ -31,6 +31,10 @@ export default function RootLayout() {
           name="settings"
           options={{ presentation: "modal", title: "Backend settings" }}
         />
+        <Stack.Screen
+          name="sos-form"
+          options={{ title: "Submit a rescue request" }}
+        />
       </Stack>
     </>
   );
